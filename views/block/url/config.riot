@@ -1,0 +1,111 @@
+<block-url-config>
+  <div>
+    <div class="mb-3">
+      <label class="form-label">
+        Name
+      </label>
+      <input name="name" class="form-control" type="text" value={ props.block.name || '' } onchange={ (e) => onName(e) } />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">
+        URL
+      </label>
+      <input name="url" class="form-control" type="text" value={ props.block.url || '' } onchange={ (e) => onURL(e) } />
+    </div>
+
+    <hr />
+      
+    <div class="mb-3">
+      <div class="form-check form-switch">
+        <input class="form-check-input" id="is-required" type="checkbox" onchange={ (e) => onBackground(e) } { ...getProps({ checked : !props.block.background }) }>
+        <label class="form-check-label" for="is-required">
+          Enable Background
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    // export config
+    export default class BlockURLConfig {
+
+
+      // ////////////////////////////////////////////////////////////////////////////
+      //
+      // Riot Methods
+      //
+      // ////////////////////////////////////////////////////////////////////////////
+
+      /**
+       * on before mount
+       *
+       * @param {Object} props
+       */
+      onBeforeMount() {
+        // bind
+        this.onName = this.onName.bind(this);
+      }
+
+      /**
+       * get props
+       */
+      getProps(obj) {
+        // return get props
+        return Object.keys(obj).reduce((accum, key) => {
+          // set accum
+          if (obj[key]) accum[key] = true;
+
+          // return accum
+          return accum;
+        }, {});
+      }
+      
+
+
+      // ////////////////////////////////////////////////////////////////////////////
+      //
+      // Config Methods
+      //
+      // ////////////////////////////////////////////////////////////////////////////
+
+      /**
+       * on color
+       */
+      onName(e) {
+        // prevent
+        e.preventDefault();
+        e.stopPropagation();
+
+        // set color
+        this.props.set('name', e.target.value);
+      }
+
+      /**
+       * on color
+       */
+      onURL(e) {
+        // prevent
+        e.preventDefault();
+        e.stopPropagation();
+
+        // set color
+        this.props.set('url', e.target.value);
+      }
+
+      /**
+       * on model
+       */
+      onBackground (e) {
+        // get value
+        const val = $(e.target).is(':checked');
+
+        // get backlog
+        const background = !val;
+        
+        // set model
+        this.props.set('background', background);
+      }
+    }
+  </script>
+</block-url-config>
