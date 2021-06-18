@@ -56,7 +56,7 @@ export default class URLPage extends Struct {
   get views() {
     // return object of views
     return {
-      view   : 'page/url/view',
+      view   : 'page/url',
       config : 'page/url/config',
     };
   }
