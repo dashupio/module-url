@@ -20,7 +20,7 @@ const PageUrl = (props = {}) => {
   return (
     <Page { ...props } bodyClass="flex-column" require={ required }>
       <Page.Config show={ config } onHide={ (e) => setConfig(false) } />
-      <Page.Menu onConfig={ () => setConfig(true) } onShare />
+      <Page.Menu onConfig={ () => setConfig(true) } presence={ props.presence } onShare />
       { !!props.page.get('data.url') && (
         <Page.Body>
           <iframe src={ props.page.get('data.url') } className="d-flex flex-1 embed-item" frameBorder="0" />
