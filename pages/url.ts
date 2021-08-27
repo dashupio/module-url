@@ -30,7 +30,7 @@ export default class URLPage extends Struct {
    */
   get icon() {
     // return page type label
-    return 'fa fa-browser';
+    return 'fad fa-browser text-info';
   }
 
   /**
@@ -38,7 +38,7 @@ export default class URLPage extends Struct {
    */
   get title() {
     // return page type label
-    return 'URL Page';
+    return 'URL';
   }
 
   /**
@@ -66,7 +66,7 @@ export default class URLPage extends Struct {
    */
   get categories() {
     // return array of categories
-    return ['View'];
+    return ['Misc'];
   }
 
   /**
@@ -74,6 +74,6 @@ export default class URLPage extends Struct {
    */
   get description() {
     // return description string
-    return 'URL view page';
+    return 'Embed any URL in Dashup';
   }
 }

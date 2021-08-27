@@ -20,7 +20,7 @@ export default class UrlBlock extends Struct {
    */
   get icon() {
     // return page type label
-    return 'fa fa-browser';
+    return 'fad fa-browser';
   }
 
   /**
@@ -28,7 +28,7 @@ export default class UrlBlock extends Struct {
    */
   get title() {
     // return page type label
-    return 'URL Block';
+    return 'URL';
   }
 
   /**
@@ -63,6 +63,6 @@ export default class UrlBlock extends Struct {
    */
   get description() {
     // return description string
-    return 'Store an embedded url in a handy block';
+    return 'Embedded URL Block';
   }
 }
