@@ -1,6 +1,7 @@
 
 // import react
 import React from 'react';
+import { TextField } from '@dashup/ui';
 
 // create page url config
 const PageUrlConfig = (props = {}) => {
@@ -8,15 +9,13 @@ const PageUrlConfig = (props = {}) => {
   // return jsx
   return (
     <>
-      <div className="mb-3">
-        <label className="form-label">
-          Page URL
-        </label>
-        <input value={ props.page.get('data.url') } onChange={ (e) => props.setData('url', e.target.value, true) } className="form-control" />
-        <small>
-          The URL to display on this page.
-        </small>
-      </div>
+      <TextField
+        label="Page URL"
+        value={ props.page.get('data.url') }
+        onChange={ (e) => props.setData('url', e.target.value, true) }
+        helperText="The URL to display on this page."
+        fullWidth
+      />
     </>
   )
 };

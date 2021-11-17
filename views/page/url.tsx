@@ -23,7 +23,9 @@ const PageUrl = (props = {}) => {
       <Page.Menu onConfig={ () => setConfig(true) } presence={ props.presence } onShare />
       { !!props.page.get('data.url') && (
         <Page.Body>
-          <iframe src={ props.page.get('data.url') } className="d-flex flex-1 embed-item" frameBorder="0" />
+          <iframe src={ props.page.get('data.url') } style={ {
+            flex : 1,
+          } } frameBorder="0" />
         </Page.Body>
       ) }
     </Page>
